@@ -1,0 +1,30 @@
+name: Build Clunadministratif
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v4
+
+      - name: Installer Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+
+      - name: Builder en release
+        run: cargo build --release
+
+      - name: Uploader l'artefact
+        uses: actions/upload-artifact@v4
+        with:
+          name: clunadministratif
+          path: target/release/clunadministratif
