@@ -55,6 +55,6 @@ fn main() {
     eframe::run_native(
         "Clunadministratif",
         options,
-        Box::new(|_cc| Ok(Box::<AppState>::default())),
+        Box::new(|_cc| Box::<AppState>::default()),
     );
 }
