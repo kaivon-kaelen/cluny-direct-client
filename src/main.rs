@@ -1,6 +1,6 @@
 use eframe::egui;
 use reqwest::Client;
-use serde::{Deserialize, Serialize};
+use serde::Deserialize;
 use std::sync::Arc;
 use tokio::sync::Mutex;
 
